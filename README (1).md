@@ -1,92 +1,88 @@
 
 # SneakerAPI
 
-SneakerAPI is a RESTful API designed for managing a sneaker store. It provides endpoints for user authentication, CRUD operations for sneakers, user management, and admin functionality. The API also includes Swagger documentation for easy access to the endpoints.
+SneakerAPI é uma API RESTful projetada para gerenciar uma loja de sneakers. Ela fornece endpoints para autenticação de usuários, operações CRUD para sneaker, gerenciamento de usuários e funcionalidade administrativa. A API também inclui documentação Swagger para fácil acesso aos endpoints.
 
-## Table of Contents
+## Índice
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Authentication](#authentication)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Autenticação](#autenticação)
 - [Endpoints](#endpoints)
   - [Sneakers](#sneakers)
-  - [Users](#users)
-- [Swagger Documentation](#swagger-documentation)
-- [License](#license)
+  - [Usuários](#users)
+- [Documentação Swagger](#swagger)
+- [Licença](#licença)
 
-## Installation
+## Instalação
 
-### Prerequisites
+### Pré-requisitos
 
-- Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
-- You will need to have MongoDB running, either locally or using a cloud provider like [MongoDB Atlas](https://www.mongodb.com/atlas/database).
+- Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+- Você precisará ter o MongoDB rodando, localmente ou usando um provedor de nuvem como o [MongoDB Atlas](https://www.mongodb.com/atlas/database).
 
-### Steps
+### Passos
 
-1. Clone the repository:
+1. Clone o repositório:
     ```bash
     git clone https://github.com/drezix/test.git
     cd test
     ```
 
-2. Install dependencies:
+2. Instale as dependências:
     ```bash
     npm install
     ```
 
-3. Create a `.env` file in the root directory with the following variables:
-    ```bash
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET=your_secret_key
-    ```
-
-4. Run the application:
+3. Execute a aplicação:
     ```bash
     npm start
     ```
 
-The server will start at `http://localhost:3000`.
+O servidor será iniciado em `http://localhost:3000`.
 
-## Usage
+## Uso
 
-### Install Database
+### Instalar Banco de Dados
 
-To install the initial database, use the following endpoint:
+Para instalar o banco de dados inicial, use o seguinte endpoint:
 ```http
 POST /install
 ```
 
-## Authentication
+## Autenticação
 
-- To register a user:
+- Registrar usuário:
     ```http
     POST /auth/register
     ```
 
-- To login and retrieve a token:
+- Logar e receber um token:
     ```http
     POST /auth/login
     ```
 
-Include the token in the Authorization header of any authenticated requests as a Bearer token.
+Inclua o Token no header de Authorization de qualquer requisição que necessite um Bearer token. 
 
 ## Endpoints
 
 ### Sneakers
 
-- **GET /sneaker**: List all sneakers.
-- **POST /sneaker**: Create a new sneaker (admin only).
-- **PUT /sneaker/:id**: Update a sneaker by ID (admin only).
-- **DELETE /sneaker/:id**: Delete a sneaker by ID (admin only).
+- **GET /sneaker**: Lista todos os sneaker.
+- **POST /sneaker**: Cria um novo sneaker (admin).
+- **PUT /sneaker/:id**: Atualiza o sneaker (admin).
+- **DELETE /sneaker/:id**: Deleta o sneaker (admin).
 
 ### Users
 
-- **GET /user**: List all users.
-- **DELETE /user/:id**: Delete a user by ID (admin only).
+- **PUT /user/:id**: Atualiza um usuário (admin).
+- **DELETE /user/:id**: Deleta um usuário (admin).
+- **GET /user**: Lista todos os usuários. (admin)
+- **GET /user/:id**: Lista o usuário pelo ID. (admin)
 
-## Swagger Documentation
+## Swagger
 
-You can access the full API documentation with Swagger at:
+Você pode acessar a documentação completa da API com o Swagger em:
 
 ```
 http://localhost:3000/api-docs
@@ -94,6 +90,6 @@ http://localhost:3000/api-docs
 
 This provides detailed information about each endpoint, parameters, and responses.
 
-## License
+## Licensça
 
-This project is licensed under the MIT License.
+Este projeto é licenciado sob a Licença MIT.
